@@ -117,9 +117,6 @@ body {
     border-radius: 50%;
     text-align: center;
 }
-.hidden {
-    display: none;
-}
 #settings-modal {
     position: fixed;
     top: 0;
