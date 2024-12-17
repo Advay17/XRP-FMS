@@ -1,41 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1">
-
-    <title>FMS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FMS - LemonLink</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="container">
-        <div id="title">
-            <label>LemonLink</label>
+    <div class="container" id="center-display">
+        <div id="title">LemonLink</div>
+        <div id="status">Status: Disabled</div>
+        <div id="timer">Time Left: 0:00</div>
+        <div id="mode-grid">
+            <button id="disabled" class="mode-button">Disabled</button>
+            <button id="match" class="mode-button">Match</button>
+            <button id="auto" class="mode-button">Auto</button>
+            <button id="teleop" class="mode-button">Teleop</button>
         </div>
     </div>
-    <div id="user-container">
-        <div id="red-alliance-box" class="container alliance-box">
+    
+    <div id="alliances-container">
+        <div id="red-alliance-box" class="alliance-box">
             <label style="color: red;">Red Alliance</label>
-            
+            <div id="red-connections"></div>
         </div>
-        <div class="alliance-box container">
-            <label style="margin-left: 5.8vw; margin-top: 1vw;">Mode</label> <!--TODO: Figure out why this offset needs to exist-->
-            <div id="mode-grid">
-                <button id="disabled" class="mode-button">Disabled</button>
-                <button id="match" class="mode-button">Match</button>
-                <button id="auto" class="mode-button">Auto</button>
-                <button id="teleop" class="mode-button">Teleop</button>
-            </div>
-        </div>
-        <div id="blue-alliance-box" class="container alliance-box">
+        <div id="blue-alliance-box" class="alliance-box">
             <label style="color: blue;">Blue Alliance</label>
+            <div id="blue-connections"></div>
+        </div>
+    </div>
+    
+    <div id="settings-icon">⚙️</div>
+    <div id="settings-modal" class="hidden">
+        <div class="modal-content">
+            <h2>Settings</h2>
+            <label>Autonomous Time (s):</label>
+            <input type="number" id="auto-time" value="15" min="1" />
+            <label>TeleOp Time (s):</label>
+            <input type="number" id="teleop-time" value="135" min="1" />
+            <p>Credits: Made by FRC Team 5338 ACL RoboLoCo Members</p>
         </div>
     </div>
 
     <script src="index.js"></script>
 </body>
+</html>

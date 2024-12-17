@@ -30,6 +30,9 @@ body {
     align-items: center;
     flex-direction: column;
     overscroll-behavior-y: none;
+    height: 100vh;
+    overflow: hidden;
+    gap: 2vw;
 }
 
 .container {
@@ -53,10 +56,30 @@ body {
     justify-content: center;
     align-items: center;
 }
-
+#center-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw; /* Vertical spacing */
+    text-align: center;
+    margin-bottom: 2vw;
+}
+#alliances-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%; /* Takes most of the width */
+    max-width: 1200px;
+    gap: 2vw; /* Space between alliances */
+}
 .alliance-box {
     margin-top: 5vw;
     display: grid;
+    width: 40%;
+    background-color: var(--fms-light-yellow);
+    border-radius: 2vw;
+    padding: 1vw;
+    text-align: center;
 }
 #red-alliance-box{
     margin-right: 5vw;
@@ -78,4 +101,48 @@ body {
 }
 .mode-button:active{
     background-color: var(--fms-green);
+}
+#timer {
+    font-size: 2.5vw;
+    color: black;
+}
+#settings-icon, #back-button {
+    position: fixed;
+    bottom: 1vw;
+    left: 1vw;
+    font-size: 3vw;
+    cursor: pointer;
+    background-color: var(--fms-light-yellow);
+    padding: 0.5vw;
+    border-radius: 50%;
+    text-align: center;
+}
+.hidden {
+    display: none;
+}
+#settings-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--fms-yellow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+    z-index: 999;
+}
+.modal-content {
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+input[type="number"] {
+    font-size: 1.2vw;
+    padding: 0.5vw;
+    margin: 0.5vw;
+    border: 1px solid gray;
+    border-radius: 0.5vw;
 }
