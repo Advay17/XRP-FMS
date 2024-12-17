@@ -1,6 +1,7 @@
 :root {
     --fms-yellow: #f6ff7b;
     --fms-green: #a3ff00;
+    --fms-light-yellow: #c9ff00;
 }
 html,
 body,
@@ -54,7 +55,7 @@ body {
 }
 
 .alliance-box {
-    margin-top: 2vw;
+    margin-top: 5vw;
     display: grid;
 }
 #red-alliance-box{
@@ -62,4 +63,19 @@ body {
 }
 #blue-alliance-box{
     margin-left: 5vw;
+}
+#mode-grid{
+    display: grid;
+    background-color: #00ff1e;
+    width: 20vw;
+    margin-bottom: 3vw;
+}
+.mode-button{
+    background-color: var(--fms-light-yellow);
+    margin: 0.5vw;
+    height: 5vw;
+    font-size: medium;
+}
+.mode-button:active{
+    background-color: var(--fms-green);
 }

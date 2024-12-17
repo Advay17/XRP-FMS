@@ -24,7 +24,13 @@
             
         </div>
         <div class="alliance-box container">
-            <label>Mode</label>
+            <label style="margin-left: 5.8vw; margin-top: 1vw;">Mode</label> <!--TODO: Figure out why this offset needs to exist-->
+            <div id="mode-grid">
+                <button id="disabled" class="mode-button">Disabled</button>
+                <button id="match" class="mode-button">Match</button>
+                <button id="auto" class="mode-button">Auto</button>
+                <button id="teleop" class="mode-button">Teleop</button>
+            </div>
         </div>
         <div id="blue-alliance-box" class="container alliance-box">
             <label style="color: blue;">Blue Alliance</label>
