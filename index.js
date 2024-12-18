@@ -15,7 +15,7 @@ function setMode(mode) {
         currentMode = mode;
         statusElement.textContent = "Status: Disabled";
         timerElement.textContent = `Time Left: 0:00`;
-    } else if (mode === "Match") {
+    } else if (mode === "StartMatch") {
         startMatchSequence();
     } else {
         currentMode = mode;
@@ -67,11 +67,18 @@ for (let btn of modeButtons) {
 
 // Settings Modal Behavior
 settingsIcon.onclick = () => {
-    document.getElementById("settings-modal").classList.remove("hidden");
-    document.getElementById("center-display").classList.add("hidden");
-    document.getElementById("alliances-container").classList.add("hidden");
-    settingsIcon.classList.add("hidden");
+    document.getElementById("settings-modal").style.display="";
 };
+
+function hideSettings(){
+    document.getElementById("settings-modal").style.display="none";
+}
+
+document.body.addEventListener('keydown', function(e) {
+    if (e.key == "Escape") {
+      hideSettings();
+    }
+  });
 
 document.getElementById("auto-time").oninput = (e) => autoTime = e.target.valueAsNumber || 15;
 document.getElementById("teleop-time").oninput = (e) => teleopTime = e.target.valueAsNumber || 135;
